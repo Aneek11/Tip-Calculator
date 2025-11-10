@@ -1,0 +1,17 @@
+{
+  "name": "task5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+
+ "dev": "live-server  --port=5173 --open=./index.html"
+   
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

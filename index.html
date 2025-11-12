@@ -1,69 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon-32x32.png">
+
+
 </head>
 
 
 <body>
+  <div class="page">
+    <div class="logo">
+      <img src="assets/logo.svg" alt="SPLITTER" />
+    </div>
 
-<div class="page">
-  <div class="panel">
-    <div class="Calculator">
-      <div class="inputs">
-        <form>
-          <p>Bill</p>
-         
-         
-          <div class="input-group dollar">
-            <img src="assets/icon-dollar.svg" alt="">
+    <div class="panel">
+      <div class="Calculator">
+        <div class="inputs">
+          <form id="tip-form">
+            <p>Bill</p>
 
-            <input class="billamt" type="text" placeholder="0.00">
+            <div class="input-group dollar">
+              <img class="icon" src="assets/icon-dollar.svg" alt="" />
+              <input id="bill" class="billamt" type="number" step="0.01" min="0" placeholder="0.00" />
+            </div>
 
+            <p>Select Tip %</p>
+            <div class="tip-grid">
+              <button type="button" class="tip-btn" data-tip="5">5%</button>
+              <button type="button" class="tip-btn" data-tip="10">10%</button>
+              <button type="button" class="tip-btn" data-tip="15">15%</button>
+              <button type="button" class="tip-btn" data-tip="25">25%</button>
+              <button type="button" class="tip-btn" data-tip="50">50%</button>
+              <input type="number" class="tip-custom" placeholder="Custom" min="0" />
+            </div>
+
+            <p>Number of People</p>
+            <div class="input-group person">
+              <img class="icon" src="assets/icon-person.svg" alt="" />
+              <input id="people" class="peopleamt" type="number" min="1" placeholder="1" />
+            </div>
+
+            <button id="calcBtn" type="submit" class="calculate">Calculate</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="row">
+            <div>
+              <div class="label">Tip Amount</div>
+              <small class="each">/ person</small>
+            </div>
+            <div class="value" id="tip-amount">$0.00</div>
           </div>
 
+          <div class="row">
+            <div>
+              <div class="label">Total</div>
+              <small class="each">/ person</small>
+            </div>
+            <div class="value" id="total">$0.00</div>
+          </div>
 
-
-          <p>Select Tip</p>
-
-        <div class="tip-grid">
-          <button type="button" class="tip-btn">5%</button>
-          <button type="button" class="tip-btn">10%</button>
-          <button type="button" class="tip-btn">15%</button>
-          <button type="button" class="tip-btn">25%</button>
-          <button type="button" class="tip-btn">50%</button>
-          <input type="number" class="tip-custom" placeholder="Custom">
-     </div>
-
-        </form>
-
-        <p>Number of People</p>
-
-      <div class="input-group person">
-        <img src="assets/icon-person.svg" alt="">
-
-             <input class="peopleamt" type="text" placeholder="1">
-     </div>
-
-        <button type="button" class="calculate">Calculate</button>
-      </div>
-
-      <div class="card">
-        <div class="totalTip">
-          <sup>$</sup><span class="tip">0.00</span>
-          <small class="each">each</small>
+          <button type="button" class="reset">RESET</button>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-
-
-
-
+  <script src="app.js"></script>
 </body>
 </html>
